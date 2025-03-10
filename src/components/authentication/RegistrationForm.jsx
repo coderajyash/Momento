@@ -46,7 +46,7 @@ function RegistrationForm() {
     });
 
     axios
-      .post("https://ed-5827941652496384.educative.run/api/auth/register/", data)
+      .post("https://ec2-13-53-177-141.eu-north-1.compute.amazonaws.com/api/auth/register/", data)
       .then((res) => {
         // Registering the account and tokens in the
         // store
