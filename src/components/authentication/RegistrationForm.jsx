@@ -47,6 +47,7 @@ function RegistrationForm() {
 
     axios
       .post("http://13.53.177.141:8000/api/auth/register/", data)
+
       .then((res) => {
         // Registering the account and tokens in the
         // store
