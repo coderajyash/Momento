@@ -35,7 +35,7 @@ function LoginForm() {
     });
 
     axios
-      .post("https://ed-5827941652496384.educative.run/api/auth/login/", data)
+      .post("https://ec2-13-53-177-141.eu-north-1.compute.amazonaws.com/api/auth/login/", data)
       .then((res) => {
         // Registering the account and tokens in the store
         localStorage.setItem("auth", JSON.stringify({
