@@ -35,7 +35,7 @@ function LoginForm() {
     });
 
     axios
-      .post("http://13.53.177.141:8000/api/auth/login/", data)
+      .post("http://13.53.177.141/api/auth/login/", data)
       .then((res) => {
         // Registering the account and tokens in the store
         localStorage.setItem("auth", JSON.stringify({

@@ -18,7 +18,7 @@ function RegistrationForm() {
   });
   const [error, setError] = useState(null);
   const userActions = useUserActions();
-
+  //test
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,7 +46,7 @@ function RegistrationForm() {
     });
 
     axios
-      .post("http://13.53.177.141:8000/api/auth/register/", data)
+      .post("http://13.53.177.141/api/auth/register/", data)
 
       .then((res) => {
         // Registering the account and tokens in the
