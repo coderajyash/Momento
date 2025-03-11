@@ -30,7 +30,7 @@ function Post(props) {
 
   const handleLikeClick = (action) => {
     axiosService
-      .post(`api/post/${post.id}/${action}/`)
+      .post(`/post/${post.id}/${action}/`)
       .then(() => {
         refresh();
       })
@@ -39,7 +39,7 @@ function Post(props) {
 
   const handleDelete = () => {
     axiosService
-      .delete(`api/post/${post.id}/`)
+      .delete(`/post/${post.id}/`)
       .then(() => {
         setToaster({
           type: "warning",

@@ -10,7 +10,6 @@ function ProfileDetails(props) {
   if (!user) {
     return <div>Loading...</div>;
   }
-
   return (
     <div>
       <div className="d-flex flex-row border-bottom p-5">
@@ -32,7 +31,7 @@ function ProfileDetails(props) {
               variant="primary"
               size="sm"
 
-              onClick={() => navigate(`/api/profile/${user.id}/edit`)}
+              onClick={() => navigate(`/profile/${user.id}/edit`)}
             >
               Edit
             </Button>

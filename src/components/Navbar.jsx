@@ -5,13 +5,25 @@ import { Navbar, Container, Image, NavDropdown, Nav } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getUser, useUserActions } from "../hooks/user.actions";
+import { useContext } from "react";
+import { Context } from "./Layout";
 
 function Navigationbar() {
+  const { setToaster } = useContext(Context);
+
+  const userActions = useUserActions();
+
   const navigate = useNavigate();
   const user = getUser();
   const handleLogout = () => {
-    localStorage.removeItem("auth");
-    navigate("/login/");
+    userActions.logout().catch((e) =>
+      setToaster({
+        type: "danger",
+        message: "Logout failed",
+        show: true,
+        title: e.data?.detail | "An error occurred.",
+      })
+    );
   };
 
   return (
@@ -32,8 +44,8 @@ function Navigationbar() {
                 />
               }
             >
-              <NavDropdown.Item as={Link} to={`api/profile/${user.id}/`}>Profile</NavDropdown.Item>
-              <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={`/profile/${user.id}/`}>Profile</NavDropdown.Item>
+              <NavDropdown.Item onClick={userActions.logout}>Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

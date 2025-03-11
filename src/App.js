@@ -21,7 +21,7 @@ function App() {
         }
       />
       <Route
-        path="api/post/:postId/"
+        path="/post/:postId/"
         element={
           <ProtectedRoute>
             <SinglePost />
@@ -29,7 +29,7 @@ function App() {
         }
       />
       <Route
-        path="api/profile/:profileId/"
+        path="/profile/:profileId/"
         element={
           <ProtectedRoute>
             <Profile />
@@ -37,7 +37,7 @@ function App() {
         }
       />
       <Route
-        path="api/profile/:profileId/edit/"
+        path="/profile/:profileId/edit/"
         element={
           <ProtectedRoute>
             <EditProfile />

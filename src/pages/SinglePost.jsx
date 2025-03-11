@@ -13,9 +13,9 @@ function SinglePost() {
   console.log(useParams())
   let { postId } = useParams();
 
-  const post = useSWR(`api/post/${postId}/`, fetcher);
+  const post = useSWR(`/post/${postId}/`, fetcher);
 
-  const comments = useSWR(`api/post/${postId}/comment/`, fetcher);
+  const comments = useSWR(`/post/${postId}/comment/`, fetcher);
 
   return (
     <Layout hasNavigationBack>

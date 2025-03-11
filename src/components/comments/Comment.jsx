@@ -17,7 +17,7 @@ function Comment(props) {
 
   const handleLikeClick = (action) => {
     axiosService
-      .post(`api/post/${postId}/comment/${comment.id}/${action}/`)
+      .post(`/post/${postId}/comment/${comment.id}/${action}/`)
       .then(() => {
         refresh();
       })
@@ -26,7 +26,7 @@ function Comment(props) {
 
   const handleDelete = () => {
     axiosService
-      .delete(`api/post/${postId}/comment/${comment.id}/`)
+      .delete(`/post/${postId}/comment/${comment.id}/`)
       .then(() => {
         setToaster({
           type: "danger",
